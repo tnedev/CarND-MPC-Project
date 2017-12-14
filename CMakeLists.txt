@@ -1,4 +1,8 @@
-project(MPC)
+
+of [[ -z "$1" ]]; then
+    git commit -m "$1"
+else
+)
 
 cmake_minimum_required (VERSION 3.5)
 
@@ -26,4 +30,15 @@ endif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 add_executable(mpc ${sources})
 
 target_link_libraries(mpc ipopt z ssl uv uWS)
+    git commit -m "$1"
+else
+    git commit -m "Auto commit"
+fi
 
+git push heroku master
+heroku run python manage.py migrate
+    git commit -m "Auto commit"
+fi
+
+git push heroku master
+heroku run python manage.py migrate
