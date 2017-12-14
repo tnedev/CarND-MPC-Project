@@ -24,7 +24,7 @@ double dt = 0.1;
 const double Lf = 2.67;
 
 // Set desired speed for the cost function (i.e. max speed)
-const double ref_v = 200;
+const double ref_v = 100;
 
 // The solver takes all the state variables and actuator
 // variables in a singular vector. Thus, we should to establish
@@ -61,9 +61,9 @@ class FG_eval {
     const int epsi_cost_weight = 3000;
     const int v_cost_weight = 1.5;
     const int delta_cost_weight = 5;
-    const int a_cost_weight = 1;
+    const int a_cost_weight = 5;
     const int delta_change_cost_weight = 200;
-    const int a_change_cost_weight = 1;
+    const int a_change_cost_weight = 5;
     
     // Cost for CTE, psi error and velocity
     for (int t = 0; t < N; t++) {
