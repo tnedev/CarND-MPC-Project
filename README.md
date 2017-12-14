@@ -3,6 +3,31 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Rubric
+
+### Video
+
+https://www.youtube.com/watch?v=sfZ6YaCqs_k
+
+### The Model
+In this task I use a kinematic model of the vehicle.
+The model includes an absolute x and y position of the car, orientation angle (psi), velocity as well as cross-track error (cte) and orientation error (epsi). 
+The actuatures include an acceleration/brake (a) and steering angle (delta). 
+
+The model uses the following equations to predict the future state of the vehicle:
+![equations](./model_equations.png)
+
+### Timestep Length and Elapsed Duration (N & dt)
+
+N and dt were chosen based on the reasonable suggested values of 10s and 0.1s. Later, different values were tried, however, modifying the values even slightly frequently resultet in unstable behavior. 
+
+### Polynomial Fitting and MPC Preprocessing
+
+To simplify the polynomial fitting, the waypoints were transformed to the vehicle's perspective. This way, the position and the orientation of the vehicle are aways 0. 
+
+Further, additional weights were added to the cost function of the MPC. The weights help balance the cost and reduce the weight of the velocity compared to the cross-track error. The end values were choosen in a way that puts the speed in priority compared to the reduction of acceleration. Sports mode.
+
+
 ## Dependencies
 
 * cmake >= 3.5
